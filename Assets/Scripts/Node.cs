@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class Node : MonoBehaviour
 {
     public string flavor_text;
+    Text dialog;
 
     [HideInInspector]
     public Collider col;
     public bool interacted = false;
-    public Node ins;
 
     // Start is called before the first frame update
     void Start()
     {
-        ins = this;
         col = GetComponent<Collider>();
+        dialog = GameObject.Find("Dialog").GetComponent<Text>();
     }
 
     void OnMouseDown()
@@ -37,6 +37,7 @@ public class Node : MonoBehaviour
 
     public void Interact()
     {
+        dialog.text = flavor_text;
         Debug.Log(flavor_text);
     }
 }

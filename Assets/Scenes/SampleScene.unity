@@ -925,7 +925,6 @@ GameObject:
   - component: {fileID: 1133871050}
   - component: {fileID: 1133871052}
   - component: {fileID: 1133871051}
-  - component: {fileID: 1133871053}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: UI
@@ -977,11 +976,11 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Test
 --- !u!222 &1133871052
@@ -992,18 +991,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133871049}
   m_CullTransparentMesh: 0
---- !u!114 &1133871053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133871049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfcf271febd698d488e23ae3701b5097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1307993655
 GameObject:
   m_ObjectHideFlags: 0
