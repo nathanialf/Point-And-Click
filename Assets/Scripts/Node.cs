@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Node : MonoBehaviour
 {
     public string flavor_text;
-    Text dialog;
+    Text UI_dialog;
 
     [HideInInspector]
     public Collider col;
@@ -16,7 +16,7 @@ public class Node : MonoBehaviour
     void Start()
     {
         col = GetComponent<Collider>();
-        dialog = GameObject.Find("Dialog").GetComponent<Text>();
+        UI_dialog = GameObject.Find("Dialog").GetComponent<Text>();
     }
 
     void OnMouseDown()
@@ -37,7 +37,8 @@ public class Node : MonoBehaviour
 
     public void Interact()
     {
-        dialog.text = flavor_text;
+        Dialog dialog_script = UI_dialog.GetComponent<Dialog>();
+        dialog_script.ShowText(flavor_text, 200);
         Debug.Log(flavor_text);
     }
 }
