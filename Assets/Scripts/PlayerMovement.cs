@@ -14,11 +14,12 @@ public class PlayerMovement : MonoBehaviour
     // The NavMeshAgent will do all the magic when we get there.
     UnityEngine.AI.NavMeshAgent mesh_agent;
     Animator animator;
-
+    Vector3 zero_speed;
     void Awake()
     {
         mesh_agent = GetComponent<NavMeshAgent>();
         animator = GameObject.Find("Player Sprite").GetComponent<Animator>();
+        zero_speed = new Vector3(0, 0, 0);
     }
 
     // Start is called before the first frame update
@@ -42,13 +43,19 @@ public class PlayerMovement : MonoBehaviour
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50))
             {
-                mesh_agent.destination = hit.point; 
-                animator.SetInteger("WalkState", 1);
+                mesh_agent.destination = hit.point;
             }
         }
-        if(transform.position == target_position)
+        if (mesh_agent.velocity == zero_speed)
         {
             animator.SetInteger("WalkState", 0);
+        }
+        else
+        {
+            if (animator.GetInteger("WalkState") != 1)
+            {
+                animator.SetInteger("WalkState", 1);
+            }
         }
     }
 
